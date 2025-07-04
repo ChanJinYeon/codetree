@@ -1,13 +1,6 @@
-from typing import List
-
 n = int(input())
 arr = list(map(int, input().split()))
 
-# Please write your code here.
-def func(arr: List[int]):
-    for i in range(len(arr)):
-        arr[i] = arr[i] // 2 if arr[i] % 2 == 0 else arr[i]
+arr2 = [i//2 if i%2==0 else i for i in arr]
 
-func(arr)
-for i in arr:
-    print(i, end=' ')
+print(*arr2)
