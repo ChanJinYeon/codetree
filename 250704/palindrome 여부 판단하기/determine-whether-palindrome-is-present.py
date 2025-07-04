@@ -6,7 +6,4 @@ A = input()
 def isPalindrome(arr: str) -> bool:
     return A == A[::-1]
 
-if (isPalindrome(A)):
-    print("Yes")
-else:
-    print("No")
+print("Yes" if isPalindrome(A) else "No")
