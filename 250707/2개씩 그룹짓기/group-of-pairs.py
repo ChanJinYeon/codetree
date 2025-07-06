@@ -4,11 +4,9 @@ n = int(input())
 nums = list(map(int, input().split()))
 
 # Please write your code here.
-def func(arr:List) -> int:
-    maximum = 0
-    for i in range(n):
-        maximum = max(arr[i] + arr[2*n - 1 - i], maximum)
-    return maximum
-
 nums.sort()
-print(func(nums))
+maximum = 0
+for i in range(n):
+    get_maximum = nums[i] + nums[2*n - 1 - i]
+    maximum = get_maximum if get_maximum > maximum else maximum
+print(maximum)
