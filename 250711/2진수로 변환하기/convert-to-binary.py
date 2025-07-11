@@ -1,6 +1,10 @@
 n = int(input())
 l = []
-while n != 0:
-    l.insert(0, n % 2)
-    n = n // 2
-print(*l, sep='')
+
+if n == 0:
+    print(0)
+else:
+    while n != 0:
+        l.append(n % 2)
+        n = n // 2
+    print(*l[::-1], sep='')
