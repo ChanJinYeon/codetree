@@ -5,13 +5,18 @@ idx = 1000
 cnt = 0
 lst = [0 for _ in range(2001)]
 
-for a, b in segments:
+for a_str, b in segments:
+    a = int(a_str)
     if b == 'L':
-        lst[idx-int(a)+1:idx+1] = [x+1 for x in lst[idx-int(a):idx]]
-        idx = idx - int(a) + 1
-    if b == 'R':
-        lst[idx:idx+int(a)] = [x+1 for x in lst[idx:idx+int(a)]]
-        idx = idx + int(a)
+        start = idx - a
+        end = idx
+        lst[start:end] = [x+1 for x in lst[start:end]]
+        idx = start
+    else:
+        start = idx
+        end = idx + a
+        lst[start:end] = [x+1 for x in lst[start:end]]
+        idx = end
     
 for i in lst:
     if i >= 2:
