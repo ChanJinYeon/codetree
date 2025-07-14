@@ -1,7 +1,7 @@
 n = int(input())
 a = [int(input()) for _ in range(n)]
 
-ans = 0
+ans = 1
 cnt = 0
 for i in range(1, len(a)):
     if a[i] == a[i-1]:
@@ -9,5 +9,7 @@ for i in range(1, len(a)):
     else:
         ans = max(ans, cnt+1)
         cnt = 0
+
+ans = max(ans, cnt+1)
 
 print(ans)
