@@ -20,7 +20,7 @@ func(n, n_move, n_lst)
 func(m, m_move, m_lst)
 
 ans = -1
-for i in range(1, len(min(n_lst, m_lst))+1):
+for i in range(1, len(min(n_lst, m_lst))):
     if n_lst[i] == m_lst[i]:
         ans = i
         break
