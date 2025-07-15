@@ -1,27 +1,24 @@
-from typing import List
+from typing import List, Iterator, Tuple
+
+def position_generator(moves: List[Tuple[str, str]]) -> Iterator[int]:
+    pos = 0
+    for d, t_str in moves:
+        t = int(t_str)
+        step = 1 if d == 'R' else -1
+        for _ in range(t):
+            pos += step
+            yield pos
 
 n, m = map(int, input().split())
-
 n_move = [tuple(input().split()) for _ in range(n)]
 m_move = [tuple(input().split()) for _ in range(m)]
 
-n_lst = [0]
-m_lst = [0]
-
-def func(N: int, move: List, lst: List) -> None:
-    for i in range(N):
-        d, t_str = move[i]
-        t = int(t_str)
-        k = lst[-1]
-        for j in range(1, t+1):
-            lst.append(k + j) if d == 'R' else lst.append(k - j)
-
-func(n, n_move, n_lst)
-func(m, m_move, m_lst)
+gen_n = position_generator(n_move)
+gen_m = position_generator(m_move)
 
 ans = -1
-for i in range(1, len(min(n_lst, m_lst))):
-    if n_lst[i] == m_lst[i]:
+for i, (pos_n, pos_m) in enumerate(zip(gen_n, gen_m), start=1):
+    if pos_n == pos_m:
         ans = i
         break
 print(ans)
