@@ -11,7 +11,7 @@ for _, a, b in handshakes:
     if ia and cnt[a] < K:
         infected[b] = True
         cnt[a] += 1
-    elif ib and cnt[b] < K:
+    if ib and cnt[b] < K:
         infected[a] = True
         cnt[b] += 1
 
