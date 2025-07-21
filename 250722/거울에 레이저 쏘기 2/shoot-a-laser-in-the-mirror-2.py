@@ -17,8 +17,8 @@ r = c = 0
 cnt = 0
 d = 0
 drs, dcs = [0, -1, 0, 1], [1, 0, -1, 0] # E, N, W, S
-start_dir = k // 4
-start_num = k % 4
+start_dir = k // n
+start_num = k % n
 
 if start_dir == 0:
     r = 0
