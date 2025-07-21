@@ -28,7 +28,7 @@ elif start_dir == 1:
     r = start_num
     c = n - 1
     d = 2
-elif start_dit == 2:
+elif start_dir == 2:
     r = n - 1
     c = n - 1 - start_num
     d = 1
