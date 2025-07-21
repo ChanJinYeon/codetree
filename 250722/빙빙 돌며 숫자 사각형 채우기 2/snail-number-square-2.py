@@ -23,9 +23,6 @@ for _ in range(t-1):
         d = (d + 1) % 4
 
     r, c = r + drs[d], c + dcs[d]
-
-
-$0
     nr, nc = r + drs[d], c + dcs[d]
     if not in_range(nr, nc) or grid[nr][nc] != 0:
         d = (d + 1) % 4
