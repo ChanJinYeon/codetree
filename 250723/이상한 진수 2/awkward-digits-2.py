@@ -1,10 +1,10 @@
 a = input()
-l = [c for c in a]
+max_val = int(a, 2)
 
-for i in range(len(l)):
-    if l[i] == '0':
-        l[i] = '1'
-        break
+for i in range(len(a)):
+    l = list(a)
+    l[i] = '1' if l[i] == '0' else '0'
+    b = ''.join(l)
+    max_val = max(max_val, int(b, 2))
 
-b = ''.join(l)
-print(int(b, 2))
+print(max_val)
