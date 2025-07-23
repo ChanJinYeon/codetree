@@ -2,6 +2,7 @@ from collections import deque
 
 s = input()
 dq = deque()
+valid = True
 
 for c in s:
     if c == '(':
@@ -10,6 +11,7 @@ for c in s:
         if dq:
             dq.pop()
         else:
-            continue
+            valid = False
+            break
 
-print("Yes" if not dq else "No")
+print("Yes" if not dq and valid else "No")
